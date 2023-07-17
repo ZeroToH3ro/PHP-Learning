@@ -8,12 +8,12 @@
 
     while($x <= 15){
         echo $x . "\n";
-        $x += 1;
+        ++$x;
     };
 
     $posts = ['first port', 'second post', 'third post'];
 
-    for($x=0; $x < count($posts); $x++){
+    for($x=0, $xMax = count($posts); $x < $xMax; $x++){
         echo $posts[$x] . " ";
     }
 

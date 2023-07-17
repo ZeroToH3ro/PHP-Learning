@@ -26,3 +26,4 @@
 <?php endforeach; ?>
 
 <?php include './inc/footer.php'; ?>
+
