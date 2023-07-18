@@ -25,7 +25,7 @@ class Form extends HtmlElement
 
     public function render(): string
     {
-        $content = implode(PHP_EOL, array_map(fn($el) => $el->render(), $this->elements));
+        $content = implode(PHP_EOL, array_map(static fn($el) => $el->render(), $this->elements));
         return sprintf('<form action="%s" method="%s"> %s </form>', $this->action, $this->method, $content);
     }
 

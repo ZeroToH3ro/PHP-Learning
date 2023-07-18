@@ -3,13 +3,12 @@
 class PasswordInput extends BaseInput
 {
 
-    public function render(): string
+    public function renderInput(): string
     {
         return sprintf(
-            '<div> 
-                        <label> %s </label> <br>
-                        <input type="password" name="%s" value="%s">
-                    </div>', $this->label, $this->name, $this->value
+
+            '<input type="password" name="%s" value="%s"/>'
+            , $this->name, $this->value
         );
     }
 }
