@@ -11,7 +11,10 @@ try {
     $cartItem1 = $cart->addProduct($product1, 1);
 } catch (Exception $e) {
 }
-$cartItem2 = $product2->addToCart($cart, 1);
+try {
+    $cartItem2 = $product2->addToCart($cart, 1);
+} catch (Exception $e) {
+}
 echo "Number of items in cart: " . PHP_EOL;
 echo $cart->getTotalQuantity() . PHP_EOL; // This must print 2
 echo "Total price of items in cart: " . PHP_EOL;

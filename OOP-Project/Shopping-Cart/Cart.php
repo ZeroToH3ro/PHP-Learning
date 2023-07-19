@@ -40,7 +40,6 @@ class Cart
 
     public function addProduct(Product $product, int $quantity): CartItem
     {
-        //TODO Implement method
         $cardItem = $this->findCartItem($product->getId());
         if($cardItem === null){
             #create a new card item

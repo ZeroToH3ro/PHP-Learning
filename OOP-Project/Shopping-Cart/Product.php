@@ -7,13 +7,14 @@ class Product
     # implement function removeFromCart($Cart):void
 
     private int $id;
-    private string $name;
+    private string $title;
     private float $price;
     private int $availableQuantity;
 
-    public function __constructor(int $id, string $name, float $price, int $availableQuantity){
+    public function __construct($id, $title, $price, $availableQuantity)
+    {
         $this->id = $id;
-        $this->name = $name;
+        $this->title = $title;
         $this->price = $price;
         $this->availableQuantity = $availableQuantity;
     }
@@ -37,18 +38,23 @@ class Product
     /**
      * @return string
      */
-    public function getName(): string
+    public function getTitle(): string
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
-     * @param string $name
+     * @param string $title
      */
-    public function setName(string $name): void
+    public function setTitle(string $title): void
     {
-        $this->name = $name;
+        $this->title = $title;
     }
+
+    /**
+     * @return string
+     */
+
 
     /**
      * @return float
@@ -82,13 +88,16 @@ class Product
         $this->availableQuantity = $availableQuantity;
     }
 
+    /**
+     * @throws Exception
+     */
     public function addToCart(Cart $cart, int $quantity): CartItem
     {
-
+        return $cart->addProduct($this, $quantity);
     }
 
-    public function removeFromCart(): void
+    public function removeFromCart(Cart $cart)
     {
-
+        return $cart->removeProduct($this);
     }
 }
