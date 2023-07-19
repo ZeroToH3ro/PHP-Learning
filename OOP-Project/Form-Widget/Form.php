@@ -29,5 +29,7 @@ class Form extends HtmlElement
         return sprintf('<form action="%s" method="%s"> %s </form>', $this->action, $this->method, $content);
     }
 
-
+    public function __destruct() {
+        echo "Destruct this form";
+    }
 }

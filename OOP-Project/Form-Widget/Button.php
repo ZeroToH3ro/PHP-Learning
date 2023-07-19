@@ -12,15 +12,11 @@ class Button extends BaseInput
         $this->text = $text;
     }
 
+
     public function render(): string
     {
         return sprintf(
-            '<button> %s </button>', $this->text
+            '<button> %s </button>'
         );
-    }
-
-    public function renderInput(): string
-    {
-        // TODO: Implement renderInput() method.
     }
 }
