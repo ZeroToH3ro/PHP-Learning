@@ -1,0 +1,21 @@
+{
+    "name": "zero/mvc-learning",
+    "description": "practice mvc",
+    "autoload": {
+        "psr-4": {
+            "Zero\\MvcLearning\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ZeroToH3ro",
+            "email": "mtblaser2002@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
