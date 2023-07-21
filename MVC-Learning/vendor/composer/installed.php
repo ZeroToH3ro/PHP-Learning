@@ -3,7 +3,7 @@
         'name' => 'zero/mvc-learning',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5928b8ee7642aa54b241076156b4b9cb689cca7c',
+        'reference' => 'fcf6f963aed8d551e78662eaf20e59fad83c7027',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'zero/mvc-learning' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5928b8ee7642aa54b241076156b4b9cb689cca7c',
+            'reference' => 'fcf6f963aed8d551e78662eaf20e59fad83c7027',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
