@@ -5,18 +5,25 @@ namespace app\core;
 class Router
 {
     public Request $request;
+    public Response $response;
     protected array $routes = [];
 
     /**
      * @param Request $request
+     * @param Response $response
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
+        $this->response = $response;
     }
     public function get($path, $callback): void
     {
         $this->routes['get'][$path] = $callback;
+    }
+    public function post($path, $callback): void
+    {
+        $this->routes['post'][$path] = $callback;
     }
     public function resolve() : string
     {
@@ -25,14 +32,13 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
 
         if($callback === false){
-            echo 'Not found';
-            exit();
+            $this->response->setStatusCode(404);
+            return $this->renderView("_404");
         }
         if(is_string($callback)){
-            echo $this->renderView($callback);
-            exit();
+            return $this->renderView($callback);
         }
-        echo $callback();
+        return $callback();
     }
     public function renderView($view): string
     {
@@ -40,7 +46,11 @@ class Router
         $viewContent = $this->renderOnlyView($view);
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
-
+    public function renderContent($viewContent): array|bool|string
+    {
+        $layoutContent = $this->layoutContent();
+        return str_replace('{{content}}', $viewContent ,$layoutContent);
+    }
     protected function layoutContent(): bool|string
     {
         ob_start();
