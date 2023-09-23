@@ -33,6 +33,7 @@
             'email' => 'dick@gmail.com'
         ],
     ];
-
+    var_dump($people);
+    
     echo $people[1]['email'];
 ?>

@@ -50,10 +50,10 @@ abstract class AbstractLibrary
      * The method must set $book's $author property with the found author also.
      * This method is equivalent of Author::addBook
      *
-     * @param      $authorName
+     * @param  string     $authorName
      * @param Book $book
      */
-    abstract public function addBookForAuthor($authorName, Book $book);
+    abstract public function addBookForAuthor(string $authorName, Book $book);
 
     /**
      * Method returns books for given author
